@@ -1,0 +1,206 @@
+:root {
+    --bg-color: #fdf6e3;
+    --text-color: #3c2f2f;
+    --container-bg: rgba(255, 245, 238, 0.9);
+    --input-bg: #fff8e1;
+    --border-color: #8b6f47;
+    --button-bg: #6b4e31;
+    --button-hover: #503a24;
+    --progress-bg: #d7ccc8;
+    --progress-fill: #4a7043;
+    --card-bg: rgba(255, 245, 238, 0.95);
+    --nav-btn-bg: #a67c00;
+    --nav-btn-hover: #7f5e00;
+}
+
+body.dark {
+    --bg-color: #2c222b;
+    --text-color: #e0d8c3;
+    --container-bg: rgba(60, 47, 47, 0.9);
+    --input-bg: #3c2f2f;
+    --border-color: #6b4e31;
+    --button-bg: #a67c00;
+    --button-hover: #7f5e00;
+    --progress-bg: #4a3c31;
+    --progress-fill: #7ca982;
+    --card-bg: rgba(60, 47, 47, 0.95);
+    --nav-btn-bg: #6b4e31;
+    --nav-btn-hover: #503a24;
+}
+
+body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, rgba(139, 111, 71, 0.2), rgba(139, 111, 71, 0.2)),
+                     url('bookshelf.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    flex: 1;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#themeIcon {
+    vertical-align: middle;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 8px;
+    background: var(--nav-btn-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--nav-btn-hover);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+.book-card {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-card img {
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.progress-bar {
+    background: var(--progress-bg);
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    background: var(--progress-fill);
+    height: 100%;
+    width: 0%;
+}
+
+.chart-container {
+    margin: 20px 0;
+}
+
+#calendar {
+    margin-top: 20px;
+}
+
+.fc-event {
+    background: var(--button-bg);
+    border-color: var(--border-color);
+    color: white;
+}
+
+.fc-event img {
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+    #themeToggle {
+        position: static;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Tracker</h1>
+            <button id="themeToggle" aria-label="Toggle theme">
+                <img id="themeIcon" src="sun.png" alt="Light Mode" width="24">
+            </button>
+            <nav>
+                <a href="stats.html" class="nav-btn">View Stats</a>
+                <a href="calendar.html" class="nav-btn">Calendar</a>
+            </nav>
+        </header>
+        <h2>Add or Edit Book</h2>
+        <form id="bookForm">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" required>
+            <button type="button" id="fetchBtn">Fetch Book Info</button>
+            <div id="fetchedInfo">
+                <img id="coverPreview" src="" alt="Book Cover Preview" width="100" style="display:none;">
+            </div>
+            <label for="coverUrl">Cover URL:</label>
+            <input type="text" id="coverUrl">
+            <label for="genreInput">Genre (comma-separated):</label>
+            <input type="text" id="genreInput">
+            <label for="pagesInput">Total Pages:</label>
+            <input type="number" id="pagesInput" min="0">
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="not started">Not Started</option>
+                <option value="reading">Reading</option>
+                <option value="finished">Finished</option>
+            </select>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <label for="finishDate">Finish Date:</label>
+            <input type="date" id="finishDate">
+            <label for="format">Format:</label>
+            <select id="format">
+                <option value="Audiobook">Audiobook</option>
+                <option value="E-Book">E-Book</option>
+                <option value="Book">Book</option>
+                <option value="Manga">Manga</option>
+            </select>
+            <label for="currentPages" id="currentPagesLabel" style="display:none;">Current Pages Read:</label>
+            <input type="number" id="currentPages" min="0" style="display:none;">
+            <label for="score">Score (0-10):</label>
+            <input type="number" id="score" min="0" max="10" step="0.1">
+            <label for="comments">Comments:</label>
+            <textarea id="comments"></textarea>
+            <button type="submit">Save Book</button>
+        </form>
+        <h2>Your Books</h2>
+        <input type="text" id="search" placeholder="Search by title or genre">
+        <div id="bookList"></div>
+        <button id="exportBtn">Export Data</button>
+        <input type="file" id="importInput" accept=".json" style="display:none;">
+        <button id="importBtn">Import Data</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

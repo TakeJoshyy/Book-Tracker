@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reading Calendar</h1>
+            <button id="themeToggle" aria-label="Toggle theme">
+                <img id="themeIcon" src="sun.png" alt="Light Mode" width="24">
+            </button>
+            <nav>
+                <a href="index.html" class="nav-btn">Back to Tracker</a>
+                <a href="stats.html" class="nav-btn">Stats</a>
+            </nav>
+        </header>
+        <div id="calendar"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        initTheme();
+        loadCalendar();
+    </script>
+</body>
+</html>

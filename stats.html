@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker Stats</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Stats</h1>
+            <button id="themeToggle" aria-label="Toggle theme">
+                <img id="themeIcon" src="sun.png" alt="Light Mode" width="24">
+            </button>
+            <nav>
+                <a href="index.html" class="nav-btn">Back to Tracker</a>
+                <a href="calendar.html" class="nav-btn">Calendar</a>
+            </nav>
+        </header>
+        <h2>Total Books: <span id="total">0</span></h2>
+        <h2>Books Finished: <span id="finished">0</span></h2>
+        <h2>Books Currently Reading: <span id="readingCount">0</span></h2>
+        <h2>Average Score: <span id="avgScore">0</span></h2>
+        <h2>Top 10 Finished Books by Score</h2>
+        <ul id="topBooks"></ul>
+        <h2>Genre Distribution</h2>
+        <div class="chart-container">
+            <canvas id="genreChart"></canvas>
+        </div>
+        <h2>Format Distribution</h2>
+        <div class="chart-container">
+            <canvas id="formatChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        initTheme();
+        loadStats();
+    </script>
+</body>
+</html>
